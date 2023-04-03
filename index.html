@@ -2,11 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="projekt.JS"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Document</title> 
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   
+<p><h1 style="color:rgb(31, 122, 134);"align="center">OBJEM TĚLES</h1>
+<h3 align="center"> (koule, válec,) </h3></p>
+<hr>
+<br>
+<br>
+<br>
+<br>
+<h3>Vzorce pro výpočet objemu:</h3> <img src="objemy.jpg" alt="objemy" width="30%" height="30%" class="center">
+<br>
+<br>
+<br>
+<h4>VÝPOČET OBJEMU KOULE:</h4>
+<script type="text/javascript">
+    function vypocetObjemukoule() {
+        var polomer = document.getElementById("polomer").value;
+        var objem = (4/3) * Math.PI * Math.pow(polomer, 3);
+        document.getElementById("objem").innerHTML = "Objem koule: " + objem.toFixed(2);
+    }
+</script>
+
+<p id="result"></p>
+
+<label for="polomer">Poloměr koule:</label>
+	<input type="number" id="polomer" name="polomer" required>
+	<br>
+	<button type="button" onclick="vypocetObjemukoule()">Vypočítat objem</button>
+	<p id="objem"></p>
+<br>
+<br>  
+<h4>VÝPOČET OBJEMU VÁLCE:</h4>
+<script type="text/javascript">
+    function vypocetObjemu() {
+        var polomer = document.getElementById("polomer").value;
+        var vyska = document.getElementById("vyska").value;
+        var objem = Math.PI * Math.pow(polomer, 2) * vyska;
+        document.getElementById("vypocet").innerHTML = "Objem válce: " + objem.toFixed(2);
+    }
+</script>
+
+	<label for="polomer">Poloměr válce:</label>
+	<input type="number" id="polomer" name="polomer" required>
+	<br>
+	<label for="vyska">Výška válce:</label>
+	<input type="number" id="vyska" name="vyska" required>
+	<br>
+	<button type="button" onclick="vypocetObjemu()">Vypočítat objem</button>
+	<p id="vypocet"></p>
+<br>
+<br>
+<a style="color:rgb(255, 0, 0);" href="help.html">HELP</a>
+
 </body>
 </html>
